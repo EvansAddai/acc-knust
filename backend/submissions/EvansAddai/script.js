@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.post('/register', (req, res) => {
     const { name, email } = req.body || {};
 
-    if (typeof name !== 'string' || typeof email !== 'string' || !name.trim() || !email.trim()) {
+    if (typeof name !== 'string' || typeof email !== 'string' || !name.trim() || !email.trim() || !email.incliudes('@')) {
         return res.status(400).json({
             message: 'Your inputs are empty'
         });
